@@ -2,7 +2,7 @@
 dual_theremin_sd_akwf.py
 ────────────────────────
 • 2 manos, 6 gestos
-    Open_Palm    → lead_saw
+    Open_Palm    → lead_sawte
     Closed_Fist  → sub_bass
     Thumb_Up     → soft_pad
     Victory      → bell
