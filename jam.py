@@ -1,5 +1,5 @@
 """
-dual_theremin_sd_akwf.py
+jam.py
 ────────────────────────
 • 2 manos, 6 gestos
     Open_Palm    → lead_saw

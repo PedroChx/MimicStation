@@ -1,4 +1,3 @@
-# test_sd_beep.py  ← ejecútalo
 import numpy as np, sounddevice as sd, time
 sr = 48000
 sd.default.samplerate = sr
