@@ -83,34 +83,70 @@ GESTOS = ["Open_Palm", "Closed_Fist", "Thumb_Up",
 # Lista de WAV disponibles (relativos) + opción nula "—"
 wav_files = ["—"] + sorted(str(p) for p in AKWF.rglob("*.wav"))
 
-# Presets: mapa gesto → archivo WAV (relativo a carpeta AKWF)
 presets = {
-    "—": {},                       # sin preset
+    "—": {},  # sin preset (selección manual)
+
+    # ───────────────────── 1. TRANCE (rápido, brillante)
     "Trance": {
-        "Open_Palm":  "AKWF/akwf_sawtooth/akwf_0064.wav",
-        "Closed_Fist": "AKWF/akwf_pulse/akwf_pulse_0012.wav",
-        "Thumb_Up":    "AKWF/akwf_blended/akwf_blend_0034.wav",
-        "Victory":     "AKWF/akwf_epiano/akwf_epiano_0008.wav",
-        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_0012.wav",
-        "ILoveYou":    "AKWF/akwf_vowel/akwf_ooo_0030.wav",
+        "Open_Palm" : "AKWF/akwf_sawtooth/akwf_0064.wav",   # supersaw lead
+        "Closed_Fist": "AKWF/akwf_pulse/akwf_pulse_0004.wav", # hard sub-bass
+        "Thumb_Up"  : "AKWF/akwf_blended/akwf_blend_0012.wav", # pluck agresivo
+        "Victory"   : "AKWF/akwf_bell/akwf_bell_0002.wav",   # campana metálica
+        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_burst_0002.wav", # white-burst fx
+        "ILoveYou"  : "AKWF/akwf_vowel/akwf_aaa_0022.wav",   # coro “aa”
     },
+
+    # ───────────────────── 2. AMBIENT (texturas suaves)
     "Ambient": {
-        "Open_Palm":  "AKWF/akwf_triangle/akwf_tri_0006.wav",
-        "Closed_Fist":"AKWF/akwf_pulse/akwf_pulse_0020.wav",
-        "Thumb_Up":   "AKWF/akwf_blended/akwf_blend_0088.wav",
-        "Victory":    "AKWF/akwf_sine/akwf_sin_0040.wav",
-        "Pointing_Up":"AKWF/akwf_noise/akwf_noise_0008.wav",
-        "ILoveYou":   "AKWF/akwf_vowel/akwf_eh_0024.wav",
+        "Open_Palm" : "AKWF/akwf_triangle/akwf_tri_0006.wav",  # pad cristal
+        "Closed_Fist": "AKWF/akwf_pulse/akwf_pulse_0032.wav",  # bajo redondo
+        "Thumb_Up"  : "AKWF/akwf_blended/akwf_blend_soft_0018.wav", # pad dulce
+        "Victory"   : "AKWF/akwf_epiano/akwf_epiano_0006.wav", # e-piano aireado
+        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_wind_0003.wav", # viento
+        "ILoveYou"  : "AKWF/akwf_vowel/akwf_ooo_0020.wav",    # coro “oo”
     },
+
+    # ───────────────────── 3. ORCHESTRAL (cuerdas + percusión)
     "Orchestral": {
-        "Open_Palm":  "AKWF/akwf_vowel/akwf_ah_0026.wav",
-        "Closed_Fist":"AKWF/akwf_square/akwf_sqwav_0005.wav",
-        "Thumb_Up":   "AKWF/akwf_epiano/akwf_epiano_0002.wav",
-        "Victory":    "AKWF/akwf_epiano/akwf_epiano_0032.wav",
-        "Pointing_Up":"AKWF/akwf_noise/akwf_noise_0010.wav",
-        "ILoveYou":   "AKWF/akwf_vowel/akwf_ih_0030.wav",
+        "Open_Palm" : "AKWF/akwf_vowel/akwf_ih_0026.wav",    # string-pad tibio
+        "Closed_Fist": "AKWF/akwf_square/akwf_sqwav_0003.wav", # contrabajo square
+        "Thumb_Up"  : "AKWF/akwf_epiano/akwf_epiano_0002.wav", # cello-pad
+        "Victory"   : "AKWF/akwf_epiano/akwf_epiano_0034.wav", # pizzicato-bell
+        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_swish_0006.wav", # timpani-swish
+        "ILoveYou"  : "AKWF/akwf_vowel/akwf_eh_0018.wav",    # coro “eh”
+    },
+
+    # ───────────────────── 4. DREAM POP (etérico, choruseado)
+    "Dream Pop": {
+        "Open_Palm" : "AKWF/akwf_blended/akwf_blend_0020.wav",  # pad dream-saw
+        "Closed_Fist": "AKWF/akwf_pulse/akwf_pulse_0008.wav",   # bajo warm-pulse
+        "Thumb_Up"  : "AKWF/akwf_triangle/akwf_tri_0006.wav",   # lead tri-chorus
+        "Victory"   : "AKWF/akwf_bell/akwf_bell_soft_0004.wav", # bell dream
+        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_wind_0002.wav", # shimmer
+        "ILoveYou"  : "AKWF/akwf_vowel/akwf_ooo_0016.wav",      # vocal “oo”
+    },
+
+    # ───────────────────── 5. LO-FI CHILL (cálido / granuloso)
+    "Lo-Fi Chill": {
+        "Open_Palm" : "AKWF/akwf_sawtooth/akwf_0032.wav",      # saw envejecida
+        "Closed_Fist": "AKWF/akwf_pulse/akwf_pulse_0018.wav",  # bass dusty
+        "Thumb_Up"  : "AKWF/akwf_blended/akwf_blend_0062.wav", # pad ribbon
+        "Victory"   : "AKWF/akwf_epiano/akwf_epiano_0004.wav", # Rhodes saturado
+        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_swish_0004.wav", # vinyl hiss
+        "ILoveYou"  : "AKWF/akwf_vowel/akwf_ah_0012.wav",      # coro “ah”
+    },
+
+    # ───────────────────── 6. CINEMATIC SOFT (textura soundtrack)
+    "Cinematic Soft": {
+        "Open_Palm" : "AKWF/akwf_vowel/akwf_ih_0020.wav",      # pad voz-cuerda
+        "Closed_Fist": "AKWF/akwf_square/akwf_sqwav_0003.wav", # bajo square-warm
+        "Thumb_Up"  : "AKWF/akwf_blended/akwf_blend_0046.wav", # pad air
+        "Victory"   : "AKWF/akwf_epiano/akwf_epiano_0014.wav", # glock-epiano
+        "Pointing_Up": "AKWF/akwf_noise/akwf_noise_wind_0006.wav", # noise FX
+        "ILoveYou"  : "AKWF/akwf_vowel/akwf_eh_0018.wav",      # coro “eh”
     },
 }
+
 
 root = tk.Tk()
 root.title("Mimic Theremin – Selector de instrumentos")
